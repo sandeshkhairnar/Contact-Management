@@ -140,3 +140,36 @@ contact-management/
 - **Centralized error middleware** for consistent error responses.
 - **Robust try-catch** blocks for async operations.
 
+
+## 🛠️ Challenges and Solutions
+
+### 1. Concurrent Server & Client Execution
+**Challenge:** Initially, running the server and client applications simultaneously required opening multiple terminal windows and running commands separately.  
+**Solution:** Implemented the `concurrently` npm package in the root directory to run both applications with a single command. Modified the root `package.json` to include the following scripts:
+
+```json
+"scripts": {
+  "start": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "cd server && npm run start",
+  "client": "cd client && npm run start"
+}
+```
+### 2. MongoDB Connection Management
+
+**Challenge:** Encountered issues with database connections timing out during development and unstable connections in the production environment.
+**Solution:**  Implemented robust connection handling in `server/config/db.js`:
+
+ ```bash
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  retryWrites: true,
+  connectTimeoutMS: 10000,
+  keepAlive: true
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((err) => {
+  console.error('MongoDB connection error:', err);
+  process.exit(1);
+});
+ ```
