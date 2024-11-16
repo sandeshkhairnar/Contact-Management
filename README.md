@@ -8,7 +8,6 @@ A full-stack web application for managing contacts with CRUD operations, built u
 - **Responsive Design**: A modern, responsive user interface built with Tailwind CSS.
 - **Real-Time Form Validation**: Instant feedback on user input to ensure data quality.
 - **Sortable Contact List**: Easily sort contacts by name, email, or other attributes.
-- **Search Functionality**: Quickly find contacts using the search bar.
 - **Secure API Endpoints**: Protected backend routes with proper error handling.
 
 ## 🛠️ Tech Stack
