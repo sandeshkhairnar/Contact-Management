@@ -1,4 +1,3 @@
-// client/src/components/ContactDialog.jsx
 import React from 'react';
 import {
   Dialog,

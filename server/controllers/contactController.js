@@ -1,7 +1,5 @@
-// server/controllers/contactController.js
 const Contact = require('../models/Contact');
 
-// Create a new contact
 exports.createContact = async (req, res) => {
   try {
     const contact = await Contact.create(req.body);
@@ -15,7 +13,6 @@ exports.createContact = async (req, res) => {
   }
 };
 
-// Get all contacts with pagination and sorting
 exports.getContacts = async (req, res) => {
   try {
     const { page = 1, limit = 10, sortBy = 'firstName', order = 'asc' } = req.query;
@@ -36,7 +33,6 @@ exports.getContacts = async (req, res) => {
   }
 };
 
-// Update a contact
 exports.updateContact = async (req, res) => {
   try {
     const contact = await Contact.findByIdAndUpdate(
@@ -53,7 +49,6 @@ exports.updateContact = async (req, res) => {
   }
 };
 
-// Delete a contact
 exports.deleteContact = async (req, res) => {
   try {
     const contact = await Contact.findByIdAndDelete(req.params.id);

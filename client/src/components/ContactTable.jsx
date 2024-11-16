@@ -1,4 +1,3 @@
-// client/src/components/ContactTable.jsx
 
 import React from 'react';
 import {

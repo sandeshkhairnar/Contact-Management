@@ -1,4 +1,3 @@
-// client/src/components/ContactForm.jsx
 import React, { useState, useEffect } from 'react';
 import {
   Grid,
