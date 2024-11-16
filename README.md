@@ -1,4 +1,4 @@
-﻿# Contact Management System
+﻿# 📇 Contact Management System
 
 A full-stack web application for managing contacts with CRUD operations, built using the MERN stack (MongoDB, Express.js, React.js, Node.js).
 
